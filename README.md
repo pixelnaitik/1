@@ -1,23 +1,42 @@
-# VoyageSecure AI
+# 🛡️ VoyageSecure AI
 
-Mobile-first tourist safety monitoring and incident-response platform for a Smart India Hackathon prototype. VoyageSecure helps a tourist understand local safety context, choose a lower-risk route, find nearby help, and share an SOS with trusted contacts.
+<div align="center">
 
+![Hackathon Prototype](https://img.shields.io/badge/SIH_2026-Prototype-orange?style=for-the-badge&logo=shield)
+![Tech Stack](https://img.shields.io/badge/Stack-React_%7C_Node.js_%7C_FastAPI-blue?style=for-the-badge&logo=react)
+![Database](https://img.shields.io/badge/PostgreSQL-PostGIS-336791?style=for-the-badge&logo=postgresql)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
+**Mobile-first tourist safety monitoring and incident-response platform for a Smart India Hackathon prototype.**  
+*VoyageSecure helps a tourist understand local safety context, choose a lower-risk route, find nearby help, and share an SOS with trusted contacts.*
+
+[What It Delivers](#-what-the-prototype-delivers) • [Repository Layout](#-repository-layout) • [Quick Commands](#-useful-commands) • [Configuration](#-configuration-reference) • [Documentation Map](#-documentation-map) • [30-Day Execution Blueprint](#-30-day-internal-hackathon-execution-blueprint)
+
+</div>
+
+---
+
+> [!WARNING]
 > **Safety note:** This is an advisory prototype for a pilot city. It must never claim to guarantee safety or replace official emergency services. In India, display the official emergency number **112** prominently in the app.
 
-## What the prototype delivers
+---
 
-- Privacy-led sign-in, profile and location consent
-- Current-location safety map with aggregated crime hotspot information
-- Explainable risk score based on time, local incidents, weather/disaster and crowd signals
-- Fastest-versus-safety-weighted route comparison
-- Nearby police, hospitals and ambulance services
-- One-touch SOS, time-boxed live location sharing and trusted-contact notification
-- Grounded multilingual assistant (English, Hindi and a pilot-city language)
-- In-app/push notifications and a role-protected demo responder view
+## 🚀 What the prototype delivers
 
-## Repository layout
+- 🔒 **Privacy-led sign-in**, profile and location consent
+- 🗺️ **Current-location safety map** with aggregated crime hotspot information
+- 📊 **Explainable risk score** based on time, local incidents, weather/disaster and crowd signals
+- 🛣️ **Fastest-versus-safety-weighted route comparison**
+- 🏥 **Nearby police, hospitals and ambulance services**
+- 🚨 **One-touch SOS**, time-boxed live location sharing and trusted-contact notification
+- 🤖 **Grounded multilingual assistant** (English, Hindi and a pilot-city language)
+- 🔔 **In-app/push notifications** and a role-protected demo responder view
 
-```text
+---
+
+## 📁 Repository layout
+
+```directory
 apps/
   web/                 React + Vite mobile PWA
   api/                 Node.js + Express REST API
@@ -33,8 +52,9 @@ db/
   schema.sql           Reference schema (also mirrored at project root)
 ```
 
+---
 
-## Useful commands
+## ⚡ Useful commands
 
 | Command | Purpose |
 |---|---|
@@ -47,7 +67,9 @@ db/
 | `npm run db:seed` | Load safe pilot-city demo fixtures |
 | `pytest` | Run AI-service tests |
 
-## Configuration reference
+---
+
+## 🔐 Configuration reference
 
 | Variable | Used by | Notes |
 |---|---|---|
@@ -60,7 +82,9 @@ db/
 | `FCM_*` / `PUSH_VAPID_*` | API/web | Notifications; in-app inbox remains the fallback |
 | `DEMO_MODE` | All | Enables fixtures, never real emergency dispatch |
 
-## Quality gates before a demo
+---
+
+## ✅ Quality gates before a demo
 
 - [ ] User can sign in, deny location safely, then select a city manually.
 - [ ] Risk displays score, explanation, source freshness and confidence.
@@ -70,25 +94,32 @@ db/
 - [ ] External API outage is survivable in demo mode.
 - [ ] Mobile accessibility and critical journeys are tested on a real device.
 
-## Documentation map
+---
 
-- [Architecture](ARCHITECTURE.md) — services, boundaries, data flow and security
-- [API schema](API_SCHEMA.md) — REST contracts and error model
-- [Database schema](schema.sql) — reference PostgreSQL/PostGIS schema
-- [AI prompt and safety policy](AI_PROMPT.md) — grounded assistant contract
-- [Technology choices](TECH_STACK.md) — rationale and alternatives
-- [Blueprint](blueprint.md) — product scope and delivery phases
-- [Team backlog](TODO.md) — ready-to-execute work board
+## 📚 Documentation map
 
-# AI-Based Smart Tourist Safety Monitoring & Incident Response System
+- 🏗️ [Architecture](docs/ARCHITECTURE.md) — services, boundaries, data flow and security
+- 📜 [API schema](docs/API_SCHEMA.md) — REST contracts and error model
+- 🗄️ [Database schema](database/schema.sql) — reference PostgreSQL/PostGIS schema
+- 🤖 [AI prompt and safety policy](docs/AI_PROMPT.md) — grounded assistant contract
+- 🛠️ [Technology choices](docs/TECH_STACK.md) — rationale and alternatives
+- 📐 [Blueprint](database/blueprint.md) — product scope and delivery phases
+- 📋 [Team backlog](docs/TODO.md) — ready-to-execute work board
 
-## 30-Day Internal Hackathon Execution Blueprint
+---
+
+# 🗺️ AI-Based Smart Tourist Safety Monitoring & Incident Response System
+
+## 📅 30-Day Internal Hackathon Execution Blueprint
 
 **Team:** 4 developers · **Target:** mobile-first PWA · **Delivery style:** demonstrable vertical slices every week
 
+> [!NOTE]
 > **Product promise:** A tourist can see their contextual safety risk, choose a safer route, find verified help nearby, and send a location-aware SOS in under 10 seconds.
 
-## 1. Executive roadmap
+---
+
+## 1. 🎯 Executive roadmap
 
 | Phase | Days | Milestone | Demo outcome |
 |---|---:|---|---|
@@ -97,7 +128,7 @@ db/
 | 3 — Response | 15–21 | Action under pressure | Safer route, nearby help, SOS and responder workflow |
 | 4 — Launch & story | 22–30 | Complete journey | Multilingual assistant, alerts, deployed and rehearsed demo |
 
-### Architecture evolution
+### 🏗️ Architecture evolution
 
 ```mermaid
 flowchart LR
@@ -111,7 +142,7 @@ flowchart LR
   API --> OPS[Demo responder console]
 ```
 
-### Scope guardrails
+### 🛡️ Scope guardrails
 
 - **Build for one pilot city** (for example, Delhi, Jaipur, or Bengaluru) and seed a credible NCRB-derived/demo dataset. National real-time coverage is a future capability, not a 30-day promise.
 - Treat risk scores as **advisory**, not a guarantee of safety. Show the main contributing factors and an emergency disclaimer.
@@ -120,7 +151,7 @@ flowchart LR
 
 ---
 
-# Phase 1 — Foundations (Days 1–7)
+# 🏗️ Phase 1 — Foundations (Days 1–7)
 
 ## Phase goal
 
@@ -150,7 +181,6 @@ Deliver a secure, attractive mobile-first application shell where a tourist can 
 | Google Maps | Current location, recenter, zoom, marker, API-error fallback | Restrict key by referrer; lazy-load; location only after consent | Maps JS + Geolocation | P0 |
 | Privacy & consent | Explain why location is requested; opt out; link privacy note | No continuous tracking by default | UI | P0 |
 | UI system | Colors, typography, buttons, cards, status chips, toasts | WCAG AA contrast; no color-only signals | Frontend | P1 |
-
 
 ## Architecture update
 
@@ -205,7 +235,7 @@ CI: install → lint → unit/API test → build → dependency scan. CD: deploy
 
 ---
 
-# Phase 2 — Core Backend & Intelligence (Days 8–14)
+# 🧠 Phase 2 — Core Backend & Intelligence (Days 8–14)
 
 ## Phase goal
 
@@ -235,7 +265,6 @@ Turn the map into an explainable safety surface by loading crime hotspot data an
 | Risk engine | Score 0–100 and band; explain factor weights/freshness | Deterministic v1, testable, fallback inputs | Hotspots, feed adapters | P0 |
 | Risk UI | Current risk card, factors, data timestamp, hotspot overlay | Accessible text equivalent; no alarmist language | APIs, Maps | P0 |
 | Feed adapters | Weather/disaster/crowd adapter interface with demo fixture | Timeouts/retries; stale-data flag | External feeds | P1 |
-
 
 ## Architecture update
 
@@ -275,7 +304,6 @@ flowchart LR
 
 **Evaluation metrics:** golden-scenario band agreement ≥95%; factor completeness ≥90%; API P95 <700 ms; calibration check by zone/time; false-alarm review with mentor. Do **not** claim predictive accuracy or prevention efficacy without validated outcomes.
 
-
 ## UI/UX tasks
 
 Build an expandable safety card (band, score, confidence, timestamp), “why am I seeing this?” factor drawer, hotspot legend/filter, low-data message, and contextual bottom sheet when tapping a hotspot. Map markers must be clusterable; never draw every raw incident. Use language such as “Use extra caution” instead of “You are unsafe.”
@@ -313,7 +341,7 @@ Add PostGIS image/service for local and CI, migration job in staging pipeline, s
 
 ---
 
-# Phase 3 — Advanced Safety & Response (Days 15–21)
+# 🚨 Phase 3 — Advanced Safety & Response (Days 15–21)
 
 ## Phase goal
 
@@ -344,7 +372,6 @@ Convert risk insight into immediate action: safer routing, nearby verified servi
 | Live sharing | Explicit session duration, start/stop, location updates, shared viewer token | Consent-first; encrypted in transit; expiry | Geolocation, DB | P0 |
 | Responder console | Demo-only dashboard shows active SOS and latest location | Role-protected; no public endpoint | SOS API | P1 |
 
-
 ## Architecture update
 
 ```mermaid
@@ -367,7 +394,6 @@ sequenceDiagram
 ### Safe-route algorithm
 
 Request route candidates from Google Directions/Routes API. Sample or map-match points along each candidate; query pre-aggregated risk cells; calculate `routeSafetyCost = Σ(cellRisk × segmentLength × freshnessConfidence) + alertPenalty`. Normalize by route length and expose a comparison, not an absolute safety claim. Return the fastest route plus up to two safety-weighted alternatives. Default weights: 70% safety exposure, 20% travel time, 10% route complexity. Let judges see the transparent route factor breakdown.
-
 
 ## UI/UX tasks
 
@@ -407,7 +433,7 @@ Add queue/worker for notifications, separate responder role, encrypted provider 
 
 ---
 
-# Phase 4 — Final Integration, Multilingual AI & Demo (Days 22–30)
+# 🤖 Phase 4 — Final Integration, Multilingual AI & Demo (Days 22–30)
 
 ## Phase goal
 
@@ -437,7 +463,6 @@ Ship a polished, reliable, deployable prototype with a multilingual safety assis
 | Final polish | Offline/error states, empty data, onboarding copy, app installability | A11y, mobile performance, consistent visual system | All phases | P0 |
 | Observability | Client/API errors, latency, delivery/model dashboards | PII redaction, actionable alerts | Deployment | P1 |
 | Pitch assets | Architecture, data ethics, roadmap, script/video | Accurate claims only | Stable build | P0 |
-
 
 ## Architecture update
 
@@ -470,7 +495,6 @@ flowchart TB
 **Performance optimization:** cache common FAQ, precompute embeddings, limit context, stream UI tokens if provider supports it, timeout LLM (fallback to fixed help card), use a compact model for intent/language classification and a larger one only when retrieval supports an answer.
 
 **Evaluation metrics:** 60+ multilingual test prompts; intent accuracy ≥90%; grounded-answer rate ≥90%; harmful/hallucinated emergency details = 0 on red-team set; P95 time-to-first-response <2.5 s (or immediate loading/status feedback); action-routing success ≥95%; human clarity rating ≥4/5 from five student testers.
-
 
 ## UI/UX tasks
 
@@ -514,7 +538,7 @@ Required variables add: `LLM_API_KEY`, `LLM_MODEL`, `EMBEDDING_MODEL`, `VECTOR_D
 
 ---
 
-# Final acceptance gate and presentation plan
+# 🏆 Final Acceptance Gate & Presentation Plan
 
 ## Release checklist
 
