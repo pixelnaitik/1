@@ -1,4 +1,4 @@
-# Product Blueprint — VoyageSecure AI
+# Product Blueprint — SecureVoyage
 
 ## Problem statement
 

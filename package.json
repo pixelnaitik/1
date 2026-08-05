@@ -1,5 +1,5 @@
 {
-  "name": "voyagesecure-ai",
+  "name": "securevoyage",
   "version": "0.1.0",
   "private": true,
   "description": "AI-based Smart Tourist Safety Monitoring & Incident Response System",
@@ -13,14 +13,14 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "concurrently -n web,api -c cyan,green \"npm run dev --workspace=@voyagesecure/web\" \"npm run dev --workspace=@voyagesecure/api\"",
+    "dev": "concurrently -n web,api -c cyan,green \"npm run dev --workspace=@securevoyage/web\" \"npm run dev --workspace=@securevoyage/api\"",
     "build": "npm run build --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "typecheck": "npm run typecheck --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
-    "test:integration": "npm run test:integration --workspace=@voyagesecure/api",
+    "test:integration": "npm run test:integration --workspace=@securevoyage/api",
     "db:migrate": "node apps/api/scripts/migrate.js",
     "db:seed": "node apps/api/scripts/seed.js",
     "prepare": "husky"

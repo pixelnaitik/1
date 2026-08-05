@@ -1,4 +1,4 @@
-# Architecture — VoyageSecure AI
+# Architecture — SecureVoyage
 
 ## Design principles
 

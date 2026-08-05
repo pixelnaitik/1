@@ -1,4 +1,4 @@
-# 🛡️ VoyageSecure AI
+# 🛡️ SecureVoyage
 
 <div align="center">
 
@@ -8,7 +8,7 @@
 ![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
 **Mobile-first tourist safety monitoring and incident-response platform for a Smart India Hackathon prototype.**  
-*VoyageSecure helps a tourist understand local safety context, choose a lower-risk route, find nearby help, and share an SOS with trusted contacts.*
+*SecureVoyage helps a tourist understand local safety context, choose a lower-risk route, find nearby help, and share an SOS with trusted contacts.*
 
 [What It Delivers](#-what-the-prototype-delivers) • [Repository Layout](#-repository-layout) • [Quick Commands](#-useful-commands) • [Configuration](#-configuration-reference) • [Documentation Map](#-documentation-map) • [30-Day Execution Blueprint](#-30-day-internal-hackathon-execution-blueprint)
 
@@ -104,7 +104,6 @@ db/
 - 🤖 [AI prompt and safety policy](docs/AI_PROMPT.md) — grounded assistant contract
 - 🛠️ [Technology choices](docs/TECH_STACK.md) — rationale and alternatives
 - 📐 [Blueprint](database/blueprint.md) — product scope and delivery phases
-- 📋 [Team backlog](docs/TODO.md) — ready-to-execute work board
 
 ---
 
