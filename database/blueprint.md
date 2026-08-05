@@ -1,4 +1,4 @@
-# Product Blueprint — VoyageSecure SafeTrail AI
+# Product Blueprint — VoyageSecure AI
 
 ## Problem statement
 

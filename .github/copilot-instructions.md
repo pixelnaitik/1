@@ -1,4 +1,4 @@
-# GitHub Copilot Instructions — VoyageSecure SafeTrail AI
+# GitHub Copilot Instructions — VoyageSecure AI
 
 > IMPORTANT: Read the full documentation before generating code or modifying existing modules.
 

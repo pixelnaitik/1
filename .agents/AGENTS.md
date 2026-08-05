@@ -1,4 +1,4 @@
-# VoyageSecure SafeTrail AI — Agent System Directives
+# VoyageSecure AI — Agent System Directives
 
 > **CRITICAL MANDATORY DIRECTIVE FOR AI ASSISTANTS:**
 > Before proposing any architecture, generating code, making edits, or answering technical questions, you MUST first read and inspect all core documentation files in `docs/` and `database/`.

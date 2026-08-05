@@ -1,4 +1,4 @@
-# API Contract — VoyageSecure SafeTrail AI
+# API Contract — VoyageSecure AI
 
 **Base URL:** `/api/v1` · **Format:** JSON UTF-8 · **Time:** ISO-8601 UTC · **Coordinates:** WGS84 decimal degrees (`latitude`, `longitude`).
 

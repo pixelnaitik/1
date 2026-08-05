@@ -1,4 +1,4 @@
-# Architecture — VoyageSecure SafeTrail AI
+# Architecture — VoyageSecure AI
 
 ## Design principles
 

@@ -1,4 +1,4 @@
--- VoyageSecure SafeTrail AI reference schema (PostgreSQL 15+ / PostGIS 3+)
+-- VoyageSecure AI reference schema (PostgreSQL 15+ / PostGIS 3+)
 -- Apply through numbered migrations in production; this file is a clean bootstrap reference.
 BEGIN;
 

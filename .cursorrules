@@ -1,4 +1,4 @@
-# Cursor AI Workspace Rules for VoyageSecure SafeTrail AI
+# Cursor AI Workspace Rules for VoyageSecure AI
 
 MANDATORY FIRST STEP: Before generating any code or answering architecture questions, read all files in `docs/` and `database/`:
 - docs/ARCHITECTURE.md

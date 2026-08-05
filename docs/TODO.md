@@ -1,4 +1,4 @@
-# VoyageSecure SafeTrail AI — Execution Board
+# VoyageSecure AI — Execution Board
 
 Use this file as the lightweight source of truth until issues are migrated to GitHub Projects/Jira. Keep only actionable work here. Every item has one owner, acceptance criteria, and a phase.
 

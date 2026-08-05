@@ -1,6 +1,6 @@
-# VoyageSecure SafeTrail AI
+# VoyageSecure AI
 
-Mobile-first tourist safety monitoring and incident-response platform for a Smart India Hackathon prototype. VoyageSecure SafeTrail helps a tourist understand local safety context, choose a lower-risk route, find nearby help, and share an SOS with trusted contacts.
+Mobile-first tourist safety monitoring and incident-response platform for a Smart India Hackathon prototype. VoyageSecure helps a tourist understand local safety context, choose a lower-risk route, find nearby help, and share an SOS with trusted contacts.
 
 > **Safety note:** This is an advisory prototype for a pilot city. It must never claim to guarantee safety or replace official emergency services. In India, display the official emergency number **112** prominently in the app.
 
