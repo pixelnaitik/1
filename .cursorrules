@@ -1,0 +1,15 @@
+# Cursor AI Workspace Rules for VoyageSecure SafeTrail AI
+
+MANDATORY FIRST STEP: Before generating any code or answering architecture questions, read all files in `docs/` and `database/`:
+- docs/ARCHITECTURE.md
+- docs/API_SCHEMA.md
+- database/blueprint.md
+- database/schema.sql
+- docs/AI_PROMPT.md
+- docs/SIH_30_DAY_EXECUTION_PLAN.md
+- docs/TODO.md
+
+Strict Rules:
+- Emergency operations (SOS / 112 calls) must be offline-capable and direct.
+- Follow PostGIS schema conventions in database/schema.sql.
+- Follow REST API endpoints as defined in docs/API_SCHEMA.md.
