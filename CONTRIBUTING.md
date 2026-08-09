@@ -14,12 +14,14 @@ Here are the active collaborators working on the **SecureVoyage** repository:
 | **nayan472-sudo** | `@nayan472-sudo` | [github.com/nayan472-sudo](https://github.com/nayan472-sudo) |
 | **Shreya Shrivastav** | `@Shreya14106` | [github.com/Shreya14106](https://github.com/Shreya14106) |
 | **Subhajit** | `@Subhajit-22` | [github.com/Subhajit-22](https://github.com/Subhajit-22) |
+| **Suman Mondal** | `@SumanMondal-hue` | [github.com/SumanMondal-hue](https://github.com/SumanMondal-hue) |
 
 ### Quick Member Links:
 - **TheAnonymous** - [@ahemadmansur20](https://github.com/ahemadmansur20)
 - **nayan472-sudo** - [@nayan472-sudo](https://github.com/nayan472-sudo)
 - **Shreya Shrivastav** - [@Shreya14106](https://github.com/Shreya14106)
 - **Subhajit** - [@Subhajit-22](https://github.com/Subhajit-22)
+- **Suman Mondal** - [@SumanMondal-hue](https://github.com/SumanMondal-hue)
 
 ---
 
