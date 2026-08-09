@@ -247,7 +247,3 @@ flowchart LR
 - 🗄️ [Database Blueprint](database/blueprint.md) & [SQL Schema](database/schema.sql) — PostGIS database structure.
 - 🤖 [AI Safety Guidelines](docs/AI_PROMPT.md) — System prompts, guardrails, and evaluation criteria.
 
----
-
-## 📄 License
-Licensed under MIT. Built for SIH 2026.
