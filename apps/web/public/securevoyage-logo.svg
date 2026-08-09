@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1B2A;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#112240;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1B3A6B;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#FFA500;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="shadow" x="-10%" y="-5%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="12" flood-color="#000000" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Shield body -->
+  <g filter="url(#shadow)">
+    <path d="M256 24 L440 90 L440 280 Q440 390 256 490 Q72 390 72 280 L72 90 Z"
+          fill="url(#shieldGrad)" />
+  </g>
+
+  <!-- Shield inner border -->
+  <path d="M256 52 L418 111 L418 278 Q418 374 256 464 Q94 374 94 278 L94 111 Z"
+        fill="none" stroke="#2E5FA3" stroke-width="3" opacity="0.7"/>
+
+  <!-- Compass rose -->
+  <g transform="translate(256,262)" filter="url(#glow)">
+    <!-- Cardinal spikes -->
+    <polygon points="0,-110  -18,-30  0,-50  18,-30" fill="#FFFFFF" opacity="0.95"/>
+    <polygon points="0,110  -18,30  0,50  18,30" fill="#FFFFFF" opacity="0.6"/>
+    <polygon points="110,0  30,-18  50,0  30,18" fill="#FFFFFF" opacity="0.6"/>
+    <polygon points="-110,0  -30,-18  -50,0  -30,18" fill="#FFFFFF" opacity="0.6"/>
+    <!-- Diagonal spikes -->
+    <polygon points="72,-72  10,-32  24,-24  32,-10" fill="#FFFFFF" opacity="0.45"/>
+    <polygon points="-72,-72  -32,-10  -24,-24  -10,-32" fill="#FFFFFF" opacity="0.45"/>
+    <polygon points="72,72  32,10  24,24  10,32" fill="#FFFFFF" opacity="0.45"/>
+    <polygon points="-72,72  -10,32  -24,24  -32,10" fill="#FFFFFF" opacity="0.45"/>
+    <!-- Gold needle -->
+    <polygon points="0,0  -9,-8  62,-62  -8,-9" fill="url(#goldGrad)" filter="url(#glow)"/>
+    <polygon points="0,0  9,8  -62,62  8,9" fill="#B8860B" opacity="0.9"/>
+    <!-- Center -->
+    <circle cx="0" cy="0" r="16" fill="#112240" stroke="#FFFFFF" stroke-width="3"/>
+    <circle cx="0" cy="0" r="8" fill="url(#goldGrad)" filter="url(#glow)"/>
+    <!-- Outer dashed ring -->
+    <circle cx="0" cy="0" r="118" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="6 5" opacity="0.25"/>
+  </g>
+
+  <!-- N marker -->
+  <text x="256" y="168" text-anchor="middle" dominant-baseline="central"
+        font-family="Arial, sans-serif" font-size="22" font-weight="700"
+        fill="#FFFFFF" opacity="0.7">N</text>
+
+  <!-- Shield shine -->
+  <path d="M256 24 L370 68 L370 160 Q370 96 256 80 Q142 96 142 160 L142 68 Z"
+        fill="white" opacity="0.04"/>
+</svg>

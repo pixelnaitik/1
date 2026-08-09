@@ -24,9 +24,9 @@ export const Sidebar = ({ activeTab }) => {
         <div className="px-6 mb-6">
           <div className="flex items-center gap-3 mb-3">
             <img 
-              src="/icon-192.png" 
+              src="/securevoyage-logo.svg?v=2" 
               alt="SecureVoyage Icon" 
-              className="w-10 h-10 rounded-xl shrink-0 shadow-sm border border-secondary/40 object-cover" 
+              className="w-10 h-10 rounded-xl shrink-0 shadow-sm border border-secondary/40 object-contain bg-[#0D1B2A]" 
             />
             <div>
               <h3 className="font-bold text-base text-primary leading-tight">SecureVoyage</h3>
@@ -84,7 +84,10 @@ export const Sidebar = ({ activeTab }) => {
 
       {/* Mobile Top Header */}
       <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-4 py-3.5 bg-surface border-b border-outline-variant lg:hidden shadow-sm">
-        <div className="font-bold text-lg text-primary">SecureVoyage</div>
+        <div className="flex items-center gap-2">
+          <img src="/securevoyage-logo.svg?v=2" alt="SecureVoyage" className="w-8 h-8 rounded-lg object-contain bg-[#0D1B2A]" />
+          <span className="font-bold text-lg text-primary">SecureVoyage</span>
+        </div>
         <div className="flex items-center gap-2">
           <span className="text-xs bg-secondary-container text-on-secondary-container px-2.5 py-1 rounded-full font-bold flex items-center gap-1">
             <span className="material-symbols-outlined text-sm">verified</span>

@@ -21,17 +21,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-    <script>
-      (function() {
-        var mapsKey = (window.process && window.process.env && window.process.env.VITE_GOOGLE_MAPS_API_KEY) || '';
-        if (mapsKey) {
-          var script = document.createElement('script');
-          script.src = 'https://maps.googleapis.com/maps/api/js?key=' + mapsKey + '&libraries=places';
-          script.async = true;
-          document.head.appendChild(script);
-        }
-      })();
-    </script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyDjHT-q_cOHihvsyM1DAOJqHjHHKePs4&libraries=places"></script>
 
     <!-- Tailwind CSS with Stitch Theme Palette -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
