@@ -1,17 +1,108 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="theme-color" content="#0f172a" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SecureVoyage" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
     <meta name="description" content="SecureVoyage — Tourist Safety Monitoring & Emergency Incident Response" />
-    <title>SecureVoyage</title>
+    <title>SecureVoyage - Tourist Safety Companion</title>
+    
+    <!-- Fonts, Material Symbols & Maps SDK -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <script>
+      (function() {
+        var mapsKey = (window.process && window.process.env && window.process.env.VITE_GOOGLE_MAPS_API_KEY) || '';
+        if (mapsKey) {
+          var script = document.createElement('script');
+          script.src = 'https://maps.googleapis.com/maps/api/js?key=' + mapsKey + '&libraries=places';
+          script.async = true;
+          document.head.appendChild(script);
+        }
+      })();
+    </script>
+
+    <!-- Tailwind CSS with Stitch Theme Palette -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#191c1e",
+              "secondary-fixed-dim": "#4edea3",
+              "on-error-container": "#93000a",
+              "background": "#f7f9fb",
+              "on-primary": "#ffffff",
+              "surface": "#f7f9fb",
+              "outline-variant": "#c6c6cd",
+              "surface-container-low": "#f2f4f6",
+              "on-error": "#ffffff",
+              "error": "#ba1a1a",
+              "on-tertiary-fixed": "#2a1700",
+              "on-primary-fixed-variant": "#3f465c",
+              "secondary-container": "#6cf8bb",
+              "tertiary": "#000000",
+              "on-background": "#191c1e",
+              "surface-container": "#eceef0",
+              "inverse-primary": "#bec6e0",
+              "surface-container-lowest": "#ffffff",
+              "on-secondary-container": "#00714d",
+              "surface-tint": "#565e74",
+              "secondary-fixed": "#6ffbbe",
+              "on-secondary-fixed": "#002113",
+              "on-tertiary-fixed-variant": "#653e00",
+              "on-secondary-fixed-variant": "#005236",
+              "on-surface-variant": "#45464d",
+              "secondary": "#006c49",
+              "on-primary-fixed": "#131b2e",
+              "surface-bright": "#f7f9fb",
+              "tertiary-container": "#2a1700",
+              "error-container": "#ffdad6",
+              "surface-dim": "#d8dadc",
+              "inverse-surface": "#2d3133",
+              "surface-container-high": "#e6e8ea",
+              "on-tertiary-container": "#b87500",
+              "tertiary-fixed": "#ffddb8",
+              "outline": "#76777d",
+              "primary-fixed-dim": "#bec6e0",
+              "surface-variant": "#e0e3e5",
+              "on-primary-container": "#7c839b",
+              "surface-container-highest": "#e0e3e5",
+              "tertiary-fixed-dim": "#ffb95f",
+              "on-secondary": "#ffffff",
+              "primary-container": "#131b2e",
+              "primary-fixed": "#dae2fd",
+              "on-tertiary": "#ffffff",
+              "inverse-on-surface": "#eff1f3",
+              "primary": "#0f172a"
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
   </head>
-  <body>
+  <body class="bg-background text-on-background min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

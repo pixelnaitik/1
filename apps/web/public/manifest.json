@@ -1,0 +1,30 @@
+{
+  "short_name": "SecureVoyage",
+  "name": "SecureVoyage — Tourist Safety Companion",
+  "description": "Real-time situational safety monitoring, safe route planning, and emergency incident response in Bhubaneswar.",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/dashboard",
+  "background_color": "#f7f9fb",
+  "theme_color": "#0f172a",
+  "display": "standalone",
+  "orientation": "portrait",
+  "categories": ["travel", "safety", "utilities"]
+}

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SecureVoyage UI Verification Prototypes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --accent: #38bdf8;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --border: #334155;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      padding: 2rem;
+    }
+    header {
+      max-width: 1200px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -10px rgba(0,0,0,0.5);
+    }
+    .card-preview {
+      width: 100%;
+      height: 220px;
+      background: #020617;
+      overflow: hidden;
+      position: relative;
+    }
+    .card-preview img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+    }
+    .card-content {
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .actions {
+      margin-top: auto;
+      display: flex;
+      gap: 0.75rem;
+    }
+    .btn {
+      flex: 1;
+      padding: 0.6rem 1rem;
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.15s;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #0f172a;
+    }
+    .btn-primary:hover { background: #7dd3fc; }
+    .btn-secondary {
+      background: var(--border);
+      color: var(--text);
+    }
+    .btn-secondary:hover { background: #475569; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🛡️ SecureVoyage — Integrated Web Application</h1>
+    <p>Project ID: <code>9383359275865061812</code> · Live Prototype Environment</p>
+    
+    <div class="hero-banner">
+      <h2>🚀 Launch Interactive Web Application</h2>
+      <p>All exported screens are now connected with routing, session state, interactive SOS triggers, route planning, services map, and AI chat!</p>
+      <div class="hero-btns">
+        <a href="05_dashboard_audit.html" class="btn-hero btn-hero-primary">Launch Dashboard Page</a>
+        <a href="04_login_audit.html" class="btn-hero btn-hero-secondary">Sign In / Register</a>
+        <a href="06_sos_tracking_audit.html?trigger=true" class="btn-hero btn-hero-secondary" style="background:#ef4444;border-color:#ef4444;">🚨 Test SOS Trigger</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="grid">
+    <div class="card">
+      <div class="card-preview"><img src="02_sign_up_redesign.png" alt="Sign Up Redesign"></div>
+      <div class="card-content">
+        <div class="card-title">🛡️ SecureVoyage Sign Up Redesign</div>
+        <div class="actions">
+          <a href="02_sign_up_redesign.html" target="_blank" class="btn btn-primary">Open HTML Code</a>
+          <a href="02_sign_up_redesign.png" target="_blank" class="btn btn-secondary">View Image</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview" style="display:flex;align-items:center;justify-content:center;color:var(--text-muted);">Shader Prototype</div>
+      <div class="card-content">
+        <div class="card-title">Shader</div>
+        <div class="actions">
+          <a href="03_shader.html" target="_blank" class="btn btn-primary">Open HTML Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview"><img src="04_login_audit.png" alt="Login Audit"></div>
+      <div class="card-content">
+        <div class="card-title">🔐 SecureVoyage Login Audit</div>
+        <div class="actions">
+          <a href="04_login_audit.html" target="_blank" class="btn btn-primary">Open HTML Code</a>
+          <a href="04_login_audit.png" target="_blank" class="btn btn-secondary">View Image</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview"><img src="05_dashboard_audit.png" alt="Dashboard Audit"></div>
+      <div class="card-content">
+        <div class="card-title">🛡️ Safety Dashboard Audit</div>
+        <div class="actions">
+          <a href="05_dashboard_audit.html" target="_blank" class="btn btn-primary">Open HTML Code</a>
+          <a href="05_dashboard_audit.png" target="_blank" class="btn btn-secondary">View Image</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview"><img src="06_sos_tracking_audit.png" alt="SOS & Tracking Audit"></div>
+      <div class="card-content">
+        <div class="card-title">🚨 SOS & Tracking Audit</div>
+        <div class="actions">
+          <a href="06_sos_tracking_audit.html" target="_blank" class="btn btn-primary">Open HTML Code</a>
+          <a href="06_sos_tracking_audit.png" target="_blank" class="btn btn-secondary">View Image</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview"><img src="07_safe_route_planner_audit.png" alt="Safe Route Planner Audit"></div>
+      <div class="card-content">
+        <div class="card-title">🛣️ Safe Route Planner Audit</div>
+        <div class="actions">
+          <a href="07_safe_route_planner_audit.html" target="_blank" class="btn btn-primary">Open HTML Code</a>
+          <a href="07_safe_route_planner_audit.png" target="_blank" class="btn btn-secondary">View Image</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview"><img src="08_interactive_services_map_audit.png" alt="Interactive Services Map Audit"></div>
+      <div class="card-content">
+        <div class="card-title">🏥 Interactive Services Map Audit</div>
+        <div class="actions">
+          <a href="08_interactive_services_map_audit.html" target="_blank" class="btn btn-primary">Open HTML Code</a>
+          <a href="08_interactive_services_map_audit.png" target="_blank" class="btn btn-secondary">View Image</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview"><img src="09_multilingual_ai_chat_audit.png" alt="Multilingual AI Chat Audit"></div>
+      <div class="card-content">
+        <div class="card-title">🤖 Multilingual AI Chat Audit</div>
+        <div class="actions">
+          <a href="09_multilingual_ai_chat_audit.html" target="_blank" class="btn btn-primary">Open HTML Code</a>
+          <a href="09_multilingual_ai_chat_audit.png" target="_blank" class="btn btn-secondary">View Image</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-preview"><img src="10_contacts_privacy_audit.png" alt="Contacts & Privacy Audit"></div>
+      <div class="card-content">
+        <div class="card-title">👤 Contacts & Privacy Audit</div>
+        <div class="actions">
+          <a href="10_contacts_privacy_audit.html" target="_blank" class="btn btn-primary">Open HTML Code</a>
+          <a href="10_contacts_privacy_audit.png" target="_blank" class="btn btn-secondary">View Image</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

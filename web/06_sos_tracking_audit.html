@@ -1,0 +1,300 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>SecureVoyage - SOS Emergency &amp; Live Tracking</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-secondary-container": "#00714d",
+                        "on-surface-variant": "#45464d",
+                        "surface-container-low": "#f2f4f6",
+                        "on-tertiary-container": "#b87500",
+                        "surface-variant": "#e0e3e5",
+                        "on-secondary-fixed": "#002113",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed": "#2a1700",
+                        "on-primary-container": "#7c839b",
+                        "secondary": "#006c49",
+                        "surface-container": "#eceef0",
+                        "surface": "#f7f9fb",
+                        "primary": "#000000",
+                        "surface-tint": "#565e74",
+                        "tertiary-container": "#2a1700",
+                        "primary-fixed": "#dae2fd",
+                        "primary-fixed-dim": "#bec6e0",
+                        "outline-variant": "#c6c6cd",
+                        "outline": "#76777d",
+                        "surface-dim": "#d8dadc",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#4edea3",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#191c1e",
+                        "primary-container": "#131b2e",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-error-container": "#93000a",
+                        "error": "#ba1a1a",
+                        "on-primary-fixed": "#131b2e",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "tertiary": "#000000",
+                        "secondary-container": "#6cf8bb",
+                        "background": "#f7f9fb",
+                        "inverse-primary": "#bec6e0",
+                        "on-surface": "#191c1e",
+                        "on-primary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "16px",
+                        "lg": "24px",
+                        "xl": "40px",
+                        "margin-desktop": "32px",
+                        "xs": "4px",
+                        "max-width": "1200px",
+                        "md": "16px",
+                        "unit": "4px",
+                        "margin-mobile": "16px",
+                        "sm": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "headline-lg": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "label-bold": ["Inter"],
+                        "headline-xl-mobile": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-xl": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "label-bold": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "headline-xl-mobile": ["28px", { "lineHeight": "34px", "letterSpacing": "-0.01em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .sos-ring {
+            stroke-dasharray: 628;
+            stroke-dashoffset: 628;
+            transition: stroke-dashoffset 3s linear;
+        }
+        .sos-active .sos-ring {
+            stroke-dashoffset: 0;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md antialiased min-h-screen">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 left-0 w-full z-50 flex justify-between items-center px-margin-mobile md:px-margin-desktop py-4 bg-surface border-b border-outline-variant flat no shadows docked full-width top-0">
+<div class="flex items-center gap-4">
+<span class="font-headline-lg-mobile text-headline-lg-mobile font-bold text-primary">SecureVoyage</span>
+</div>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant p-2 font-label-bold text-label-bold hover:text-secondary transition-colors" href="#">Dashboard</a>
+<a class="text-on-surface-variant p-2 font-label-bold text-label-bold hover:text-secondary transition-colors" href="#">Route Planner</a>
+<a class="text-secondary border-b-2 border-secondary font-bold pb-2 font-label-bold text-label-bold opacity-80 duration-150" href="#">SOS Tracking</a>
+<a class="text-on-surface-variant p-2 font-label-bold text-label-bold hover:text-secondary transition-colors" href="#">Services</a>
+<a class="text-on-surface-variant p-2 font-label-bold text-label-bold hover:text-secondary transition-colors" href="#">AI Chat</a>
+<a class="text-on-surface-variant p-2 font-label-bold text-label-bold hover:text-secondary transition-colors" href="#">Privacy</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="hidden md:inline-block bg-primary-fixed text-on-primary-fixed-variant px-3 py-1 rounded-full font-label-bold text-label-bold">Verified [100%]</span>
+<button class="text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined">monitor</span></button>
+<button class="text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined">settings</span></button>
+</div>
+</nav>
+<!-- Main Layout -->
+<div class="flex pt-[73px] min-h-screen">
+<!-- Side Navigation Bar -->
+<aside class="fixed left-0 top-0 h-full hidden lg:flex flex-col py-6 z-40 bg-surface-container-low shadow-sm h-full w-72 pt-[90px]">
+<div class="px-6 mb-6">
+<div class="flex items-center gap-3 mb-2">
+<img alt="Audit User Profile" class="w-10 h-10 rounded-full object-cover border border-outline-variant" data-alt="A clean, modern corporate headshot placeholder profile picture for an audit user, set against a pristine white background. High contrast, sharp focus, professional lighting, conveying trust and authority in a minimalist setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIH8k83ttP9a8NdKNT3hJ_0vzAtPZ8etEeDdbgnwXfoUKM_k9MXVAyAjZvHBa1lY34TP2PnytWXYW0ZidMNpYT7ud7J9UBBvjsqa9e0KOhJ8UkHCTbfBbp3SGm-XH02x3ilrMqRbLTwrVl63duQuyXpTKwJrusChDRndo1erjh9-UPmZ1PxX3o6MDf9yC5Kcco6U1ruqmSrEcx_LdWtA_hKM6C8mWzw6nXTPJpFIjd1DLYyr4iQKnp">
+<div>
+<h3 class="font-headline-md text-headline-md text-primary">Audit Status</h3>
+<p class="font-label-md text-label-md text-on-surface-variant">8 / 8 Features Verified</p>
+</div>
+</div>
+<button class="w-full bg-surface-variant text-on-surface-variant py-2 rounded-md font-label-md text-label-md hover:bg-surface-container-highest transition-colors">Download Audit Report</button>
+</div>
+<nav class="flex-1 overflow-y-auto">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 mx-2 font-label-md text-label-md hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">shield</span>
+                            Safety Dashboard
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 mx-2 font-label-md text-label-md hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">map</span>
+                            Safe Route Planner
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 bg-secondary-container text-on-secondary-container rounded-lg px-4 py-3 mx-2 font-label-md text-label-md scale-95 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">emergency_share</span>
+                            SOS &amp; Live Tracking
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 mx-2 font-label-md text-label-md hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">medical_services</span>
+                            Services Directory
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 mx-2 font-label-md text-label-md hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">smart_toy</span>
+                            Multilingual AI Chat
+                        </a>
+</li>
+<li>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 mx-2 font-label-md text-label-md hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">verified_user</span>
+                            Contacts &amp; Privacy
+                        </a>
+</li>
+</ul>
+</nav>
+<div class="mt-auto px-2 space-y-1 border-t border-outline-variant pt-4 mx-4">
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 font-label-md text-label-md hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant px-4 py-3 font-label-md text-label-md hover:bg-surface-container-highest rounded-lg transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+                    Support
+                </a>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 lg:ml-72 p-margin-mobile md:p-margin-desktop bg-background w-full">
+<div class="max-w-max-width mx-auto flex flex-col items-center justify-center min-h-[calc(100vh-140px)] gap-xl">
+<!-- Central SOS Interaction -->
+<div class="flex flex-col items-center justify-center text-center relative w-full max-w-md">
+<div class="relative w-64 h-64 md:w-80 md:h-80 flex items-center justify-center cursor-pointer rounded-full bg-error-container/30 border border-error/20 shadow-[0_0_40px_rgba(186,26,26,0.15)] hover:shadow-[0_0_60px_rgba(186,26,26,0.25)] transition-shadow duration-300" id="sos-container">
+<svg class="absolute inset-0 w-full h-full transform -rotate-90 pointer-events-none" viewBox="0 0 220 220">
+<circle class="text-error-container stroke-current" cx="110" cy="110" fill="none" r="100" stroke-width="8"></circle>
+<circle class="text-error stroke-current sos-ring" cx="110" cy="110" fill="none" r="100" stroke-linecap="round" stroke-width="8"></circle>
+</svg>
+<div class="z-10 flex flex-col items-center justify-center p-6 rounded-full bg-error text-on-error w-48 h-48 md:w-60 md:h-60 shadow-lg">
+<span class="material-symbols-outlined text-6xl mb-2" style="font-variation-settings: 'FILL' 1;">sos</span>
+<span class="font-headline-md text-headline-md font-bold uppercase tracking-widest">Hold</span>
+<span class="font-label-md text-label-md opacity-90 mt-1">3 Seconds to Confirm</span>
+</div>
+</div>
+</div>
+<!-- Active Tracking Status Card -->
+<div class="w-full max-w-lg bg-surface border border-outline-variant rounded-xl p-lg shadow-sm">
+<div class="flex items-center justify-between mb-4 pb-4 border-b border-outline-variant">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary animate-pulse" style="font-variation-settings: 'FILL' 1;">my_location</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Live Tracking Active</h2>
+</div>
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full font-label-bold text-label-bold flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary animate-ping mr-1"></span>
+                            Secure
+                        </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Session Status</p>
+<p class="font-body-md text-body-md text-on-surface font-medium">Time-Boxed Active</p>
+</div>
+<div class="bg-surface-container-low p-4 rounded-lg">
+<p class="font-label-md text-label-md text-on-surface-variant mb-1 uppercase tracking-wider">Expires In</p>
+<p class="font-body-md text-body-md text-on-surface font-medium text-error">45m 00s</p>
+</div>
+</div>
+<div class="flex items-center gap-3 bg-surface-bright p-4 rounded-lg border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant">group</span>
+<p class="font-body-md text-body-md text-on-surface"><strong>3 Contacts Notified</strong> of your location.</p>
+</div>
+</div>
+<!-- 112 Fallback & Actions -->
+<div class="w-full max-w-lg flex flex-col gap-4">
+<button class="w-full bg-error text-on-error py-4 rounded-lg font-headline-md text-headline-md font-bold hover:bg-error-container hover:text-on-error-container transition-colors shadow-md flex items-center justify-center gap-3 min-h-[64px]">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">call</span>
+                        Call Official 112 Emergency
+                    </button>
+<div class="bg-surface border border-outline-variant rounded-lg p-4 flex flex-col gap-2">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Cancel Alarm Slider</span>
+<span class="font-label-md text-label-md text-primary font-bold">10s</span>
+</div>
+<div class="relative w-full h-12 bg-surface-container-highest rounded-full overflow-hidden flex items-center group cursor-pointer border border-outline-variant">
+<div class="absolute left-1 w-10 h-10 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-sm z-10 pointer-events-none">
+<span class="material-symbols-outlined text-sm">close</span>
+</div>
+<div class="w-full text-center font-label-bold text-label-bold text-on-surface-variant ml-8">
+                                Slide to Cancel
+                            </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<script>
+        // Simple script to handle SOS ring interaction visual
+        const sosContainer = document.getElementById('sos-container');
+        let holdTimer;
+        
+        sosContainer.addEventListener('mousedown', () => {
+            sosContainer.classList.add('sos-active');
+            // Logic for actual confirmation would go here
+        });
+        
+        sosContainer.addEventListener('mouseup', () => {
+            sosContainer.classList.remove('sos-active');
+        });
+        
+        sosContainer.addEventListener('mouseleave', () => {
+            sosContainer.classList.remove('sos-active');
+        });
+        
+        // Touch events for mobile
+        sosContainer.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            sosContainer.classList.add('sos-active');
+        });
+        
+        sosContainer.addEventListener('touchend', () => {
+            sosContainer.classList.remove('sos-active');
+        });
+    </script>
+  <script src="app.js"></script>
+</body></html>
